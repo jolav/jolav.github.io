@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Jolav Projects</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Open source projects: codetabs (free online services), roguelike (online game), chuletas (gathering information), betazone (where ideas and prototypes wait)" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/_public/jolav32.png">
+
+</head>
+
+<body>
+
+  <section class="openSource" id="openSource">
+
+    <div class="centerText">
+      <h1><span class="tile-image jolav64"></span>Open Source Projects</h1>
+    </div>
+
+    <div class="projects">
+
+      <div class="project-tile">
+        <a href="https://codetabs.com">
+          <span class="tile-image ct32r"></span>
+          <span class="tile-title">
+            &nbsp;&nbsp;CODETABS
+            <br>
+          </span>
+          <span class="desc">Open source online web development tools. Github star history. Count Lines of Code. CORS
+            proxy server. Geolocation
+            IP server. HTTP Headers. Api weather temp. Alexa ranking. Gif to Video Converter</span>
+        </a>
+      </div>
+
+      <div class="project-tile">
+        <a href="https://roguelike.online">
+          <span class="tile-image roguelike32"></span>
+          <span class="tile-title">
+            &nbsp;&nbsp;ROGUELIKE ONLINE
+            <br>
+          </span>
+          <span class="desc">Online post apocalyptic roguelike using authoritative game server </span>
+        </a>
+      </div>
+
+      <div class="project-tile">
+        <a href="https://jolav.github.io/betazone">
+          <span class="tile-image betazone32"></span>
+          <span class="tile-title">
+            &nbsp;&nbsp;BETAZONE
+            <br>
+          </span>
+          <span class="desc"> Where ideas and prototypes wait. Procedural Map Generator - Dungeon Random Generator -
+            Game of Life - Tetris - Real Time SP500.
+          </span>
+        </a>
+      </div>
+
+      <div class="project-tile">
+        <a href="https://jolav.github.io/chuletas">
+          <span class="tile-image chuletas32"></span>
+          <span class="tile-title">
+            &nbsp;&nbsp;CHULETAS
+            <br>
+          </span>
+          <span class="desc"> Gathering information to try not to spend all day looking for the same questions.<br>
+            Snippets for javascript, node and golang<br>
+            Help installing services in Debian and much more<br>
+            At the moment only in Spanish
+          </span>
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!--- Footer -->
+  <footer class="footer">
+    <span>GET IN TOUCH.</span>
+    <ul>
+      <li>
+        <a class="m mail32" alt="href=" #">97fdf8fbf6e1b9f3f2e1d7f8e2e3fbf8f8fcb9f4f8faO631216062e02090c3116010a170c</a>
+      </li>
+      <li>
+        <a class="github32" alt="github" href="https://github.com/jolav">
+        </a>
+      </li>
+    </ul>
+    <span>
+      JOLAV &copy;
+      <span id="year"></span>
+    </span>
+  </footer>
+  <!-- End -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="./index.css">
+
+  <script>
+    function getValue(oldValue) {
+      var value = "";
+      var keyInHex = oldValue.substr(0, 2);
+      var key = parseInt(keyInHex, 16);
+      for (var n = 2; n < oldValue.length; n += 2) {
+        var charInHex = oldValue.substr(n, 2)
+        var char = parseInt(charInHex, 16);
+        var output = char ^ key;
+        value += String.fromCharCode(output);
+      }
+      return value;
+    }
+
+    const ms = document.getElementsByClassName("m");
+
+    for (let i = 0; i < ms.length; i++) {
+      const el = ms[i]
+      const oldValue = el.innerHTML;
+      const aux = oldValue.split("O")[0]
+      const value = getValue(aux);
+      if (i === 0) {
+        el.textContent = "Ask Me Anything"
+      }
+      if (i === 1) {
+        el.textContent = value;
+      }
+      el.href = 'mailto:' + value;
+    }
+
+
+    const year = document.getElementById("year")
+    year.textContent = new Date().getFullYear()
+  </script>
+
+</body>
+
+</html>
