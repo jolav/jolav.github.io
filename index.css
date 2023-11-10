@@ -113,6 +113,15 @@ body {
 }
 
 /* FOOTER */
+
+body {
+  position: relative;
+  margin: 0 auto;
+  min-height: 98%;
+  padding-bottom: 6rem;
+}
+
+
 .footer {
   position: absolute;
   right: 0;
